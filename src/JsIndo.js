@@ -4,7 +4,7 @@
 class Helper {
 
   /**
-   * isString( String: param ) : bool
+   * @method isString( String: param ) : bool
    * @param String: value
    * @return bool
    */
@@ -13,7 +13,7 @@ class Helper {
   }
 
   /**
-   * isArray( Array: param ) : bool
+   * @method isArray( Array: param ) : bool
    * @param Array: data
    * @return bool
    */
@@ -22,7 +22,7 @@ class Helper {
   }
 
   /**
-   * exists( String: param ) : bool
+   * @method exists( String: param ) : bool
    * @param String: selector|elements
    * @return bool
    */
@@ -31,7 +31,7 @@ class Helper {
   }
 
   /**
-   * retVal( String: param ) : bool
+   * @method retVal( String: param ) : bool
    * @param String: selector|elements
    * @return bool
    */
@@ -48,7 +48,7 @@ class Helper {
 class Core extends Helper {
 
   /**
-   * constructor( String: param ) : Class instance
+   * @method constructor( String: param ) : Class instance
    * @param String: selector|elements
    * @return instance
    */
@@ -61,7 +61,7 @@ class Core extends Helper {
   }
 
   /**
-   * html( String: param ) : elements
+   * @method html( String: param ) : elements
    * @param String: value|html
    * @return (param) ? html content
    */
@@ -76,7 +76,7 @@ class Core extends Helper {
   }
 
   /**
-   * on( Event: param, CallbackOrSelector: param, Callback: function) : listener
+   * @method on( Event: param, CallbackOrSelector: param, Callback: function) : listener
    * @param Event: event name
    * @param CallbackOrSelector: can be selector or function
    * @param Callback: function
@@ -98,7 +98,7 @@ class Core extends Helper {
   }
 
   /**
-   * hide()
+   * @method hide()
    * @return hide element from instance selector
    */
   hide() {
@@ -108,7 +108,7 @@ class Core extends Helper {
   }
 
   /**
-   * show()
+   * @method show()
    * @return show element from instance selector
    */
   show() {
@@ -118,7 +118,7 @@ class Core extends Helper {
   }
 
   /**
-   * toggle()
+   * @method toggle()
    * @return toggle (hide|show) element from instance selector
    */
   toggle() {
@@ -132,7 +132,7 @@ class Core extends Helper {
   }
 
   /**
-   * remove()
+   * @method remove()
    * @return remove DOM element from instance selector
    */
   remove() {
@@ -142,11 +142,29 @@ class Core extends Helper {
   }
 
   /**
-   * val()
+   * @method val()
    * @return value from instance selector
    */
   val() {
     return this.elems[0].value;
+  }
+
+  /**
+   * @method data()
+   * @return value from data attribute in selector
+   */
+  data(key) {
+    return (!key)
+      ? this.elems[0].dataset 
+      : this.elems[0].dataset[key];
+  }
+
+  /**
+   * @method text()
+   * @return value from instance selector
+   */
+  text() {
+    return this.elems[0].innerText;
   }
 
   /**
@@ -166,7 +184,6 @@ const run = selector => {
     : (selector.__el) ? new Core([selector.element])
     : new Core([selector])
 }
-
 
 // Runner
 window.jsid = run;

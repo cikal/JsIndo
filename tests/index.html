@@ -41,7 +41,7 @@
     <p>
         <input type="search" name="konten" placeholder="Type here..">
     </p>
-    <div id="here">Your new content will shown here</div>
+    <div id="here" data-coba="udah jalan">Your new content will shown here</div>
     <script src="../src/JsIndo.js"></script>
     <script>
     // hide
@@ -63,6 +63,11 @@
         const placeholderVal = 'Your new content will shown here'
         jsid('#here').html((curVal.length > 0) ? curVal : placeholderVal);
     })
+
+    console.log(jsid('li:nth-child(2)').text())
+
+    console.log("test dengan param", jsid('#here').data('coba'))
+    console.log("test tanpa param", jsid('#here').data())
     </script>
 </body>
 
