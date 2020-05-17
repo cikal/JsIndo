@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <style>
+        body {
+            max-width: 600px; margin: auto; padding: 40px 20px; font-family: Verdana, Arial, sans-serif; font-size: 14px;
+        }
+        .hide {
+            border: 1px solid red;
+        }
+        p:nth-child(2) {
+            visibility: hidden;
+        }
+        input[type=search] {
+            width: 100%; box-sizing: border-box; outline: none; padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="hide">I'll hidden after 3 second</p>
+    <p>Then i'm show after my <mark>sibling hide</mark></p>
+    <hr>
+    <p>
+        <input type="checkbox" id="cbtes"> <span>You can <code>toggle()</code> me</span>
+    </p>
+    <hr>
+    <ul>
+        <li>List 1</li>
+        <li>List 2</li>
+        <li>List 3</li>
+        <li>List 4</li>
+        <li>List 5</li>
+    </ul>
+    <button id="btn1">Remove list in position 3</button>
+    <hr>
+    <p>
+        <input type="search" name="konten" placeholder="Type here..">
+    </p>
+    <div id="here">Your new content will shown here</div>
+    <script src="../src/JsIndo.js"></script>
+    <script>
+    // hide
+    setTimeout(function() {
+        jsid('.hide').hide()
+        jsid('p:nth-child(2)').show()
+    }, 3000);
+
+    jsid('#cbtes').on('change', () => {
+        jsid('span').toggle()
+    })
+
+    jsid('#btn1').on('click', () => {
+        jsid('li:nth-child(3)').remove()
+    })
+
+    jsid('input[name=konten]').on('keyup', () => {
+        let curVal = jsid('input[name=konten]').val()
+        const placeholderVal = 'Your new content will shown here'
+        jsid('#here').html((curVal.length > 0) ? curVal : placeholderVal);
+    })
+    </script>
+</body>
+
+</html>
