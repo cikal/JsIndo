@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Form Validation</title>
+  <style>body{background-color:#1e90ff;font-family:Avenir,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:14px}.container{background-color:#fff;max-width:500px;margin:auto;padding:14px;box-shadow:4px 10px 8px rgba(0,0,0,.5)}h1{margin-top:0;text-align:center}button,input[type=email],input[type=file],input[type=number],input[type=password],input[type=text],select,textarea{margin-top:4px;width:100%;padding:6px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box}button{background-color:#333;color:#fff;transition:all .5s}button:hover{background-color:#28a745}label{margin-right:20px}details{cursor:pointer;margin-bottom:10px}.pre,pre{background-color:#eee;padding:15px;cursor:text}</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Test Form Validation</h1>
+
+    <!-- dont forget to define action here, read note below this form -->
+    <form action="" method="post" validasi>
+      <table cellpadding="5" cellspacing="5" width="100%">
+        <tr>
+          <td>Full name<br><input type="text" name="name" placeholder="your name"></td>
+          <td>Phone number<br><input type="number" name="number" placeholder="08xx"></td>
+        </tr>
+        <tr>
+          <td>Email address<br><input type="email" name="email" placeholder="john@example.com"></td>
+          <td>Password<br><input type="password" name="password" placeholder="password" autocomplete="new-password"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Select plan<br>
+            <select name="select-test" id="">
+              <option value="" selected="" disabled="">-- select me --</option>
+              <option value="regular">Regular plan</option>
+              <option value="premium">Premium plan</option>
+              <option value="exclusive">Exclusive plan</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Pick one / all which you need<br>
+            <label for="cek1">
+              <input type="checkbox" name="cek[]" id="cek1" value="popcorn"> Popcorn
+            </label>
+            <label for="cek2">
+              <input type="checkbox" name="cek[]" id="cek2" value="friench fries"> Friench Fries
+            </label>
+            <label for="cek3">
+              <input type="checkbox" name="cek[]" id="cek3" value="drink"> Drink
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Payment method using<br>
+            <label for="radio1">
+              <input type="radio" name="radio" value="cash" id="radio1"> Cash Payment
+            </label>
+            <label for="radio2">
+              <input type="radio" name="radio" value="card" id="radio2"> Credit / Visa Card
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Please write below about our service<br><textarea name="opinion" rows="5" placeholder="your opinion"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2">Your picture, for guest card<br><input type="file" name="file"></td>
+        </tr>
+      </table>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+
+    <p class="pre"><strong>Note</strong>: You need to define form action attribute, for make sure your submitted form data was send correctly to your backend.</p>
+
+    <br>
+
+    <section>
+      <h2>How to use ?</h2>
+      <details>
+        <summary>Usage using ES Module</summary>
+        <p>
+          <pre>
+&lt;script type="module"&gt;
+  import jsid from 'path/to/jsindo-form.esm.js';
+
+  jsid.config({
+    formAttribute: "validasi",
+    debug: true
+  }).start()
+&lt;/script&gt;</pre>
+        </p>
+      </details>
+      <details>
+        <summary>Usage using Vanilla</summary>
+        <p>
+          <pre>&lt;script src="path/to/jsindo-form.min.js"&gt;&lt;/script&gt;</pre>
+        </p>
+      </details>
+      <details>
+        <summary>Usage using CDN</summary>
+        <p><pre>// ES Module
+&lt;script src="..."&gt;&lt;/script&gt;</pre></p>
+        <p><pre>// Vanilla
+&lt;script src="..."&gt;&lt;/script&gt;</pre></p>
+      </details>
+    </section>
+  </div>
+
+  <!-- Usage using ES Module -->
+  <script type="module">
+    import JsIndoForm from '../src/form/jsindo-form.esm.min.js';
+
+    JsIndoForm.config({
+      formAttribute: "validasi",
+      debug: false
+    }).start()
+  </script>
+
+  <!-- Usage using regular js -->
+  <!-- <script src="../src/form/jsindo-form.min.js"></script> -->
+</body>
+</html>
+
+
