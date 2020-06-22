@@ -96,17 +96,25 @@
       </details>
       <details>
         <summary>Usage using CDN</summary>
-        <p><pre>// ES Module
-&lt;script src="..."&gt;&lt;/script&gt;</pre></p>
-        <p><pre>// Vanilla
-&lt;script src="..."&gt;&lt;/script&gt;</pre></p>
+        <p><pre>ES Module
+// production
+&lt;script src="https://rawcdn.githack.com/cikal/JsIndo/5a215675fe54e1840f91f1138cd629a4e9e57062/src/form/jsindo-form.esm.min.js"&gt;&lt;/script&gt;
+// development
+&lt;script src="https://raw.githack.com/cikal/JsIndo/master/src/form/jsindo-form.esm.min.js"&gt;&lt;/script&gt;</pre>
+</p>
+        <p><pre>Vanilla
+// production
+&lt;script src="https://rawcdn.githack.com/cikal/JsIndo/5a215675fe54e1840f91f1138cd629a4e9e57062/src/form/jsindo-form.min.js"&gt;&lt;/script&gt;
+// development
+&lt;script src="https://raw.githack.com/cikal/JsIndo/master/src/form/jsindo-form.min.js"&gt;&lt;/script&gt;</pre>
+</p>
       </details>
     </section>
   </div>
 
   <!-- Usage using ES Module -->
   <script type="module">
-    import JsIndoForm from '../src/form/jsindo-form.esm.min.js';
+    import JsIndoForm from 'https://rawcdn.githack.com/cikal/JsIndo/5a215675fe54e1840f91f1138cd629a4e9e57062/src/form/jsindo-form.esm.min.js';
 
     JsIndoForm.config({
       formAttribute: "validasi",
@@ -118,5 +126,3 @@
   <!-- <script src="../src/form/jsindo-form.min.js"></script> -->
 </body>
 </html>
-
-
